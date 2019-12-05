@@ -5,7 +5,7 @@
   <artifactId>google-cloud-bigquerydatatransfer-parent</artifactId>
   <packaging>pom</packaging>
   <version>0.120.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
-  <name>fixme Parent</name>
+  <name>BigQuery DataTransfer Parent</name>
   <url>https://github.com/googleapis/java-bigquerydatatransfer</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.

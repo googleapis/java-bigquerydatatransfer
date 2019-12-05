@@ -14,7 +14,7 @@
   <name>Google Cloud bigquerydatatransfer BOM</name>
   <url>https://github.com/googleapis/java-bigquerydatatransfer</url>
   <description>
-    BOM for fixme
+    BOM for BigQuery DataTransfer
   </description>
 
   <organization>

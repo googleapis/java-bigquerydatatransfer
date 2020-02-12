@@ -160,7 +160,7 @@ public class DataTransferServiceClientTest {
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
-    ParentName parent = ProjectName.of("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
     ListDataSourcesPagedResponse pagedListResponse = client.listDataSources(parent);
 
@@ -172,7 +172,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListDataSourcesRequest actualRequest = (ListDataSourcesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ParentNames.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -186,7 +186,7 @@ public class DataTransferServiceClientTest {
     mockDataTransferService.addException(exception);
 
     try {
-      ParentName parent = ProjectName.of("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
       client.listDataSources(parent);
       Assert.fail("No exception raised");
@@ -223,7 +223,7 @@ public class DataTransferServiceClientTest {
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
-    ParentName parent = ProjectName.of("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     TransferConfig transferConfig = TransferConfig.newBuilder().build();
 
     TransferConfig actualResponse = client.createTransferConfig(parent, transferConfig);
@@ -233,7 +233,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateTransferConfigRequest actualRequest = (CreateTransferConfigRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ParentNames.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(transferConfig, actualRequest.getTransferConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -248,7 +248,7 @@ public class DataTransferServiceClientTest {
     mockDataTransferService.addException(exception);
 
     try {
-      ParentName parent = ProjectName.of("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       TransferConfig transferConfig = TransferConfig.newBuilder().build();
 
       client.createTransferConfig(parent, transferConfig);
@@ -431,7 +431,7 @@ public class DataTransferServiceClientTest {
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
-    ParentName parent = ProjectName.of("[PROJECT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
     ListTransferConfigsPagedResponse pagedListResponse = client.listTransferConfigs(parent);
 
@@ -443,7 +443,7 @@ public class DataTransferServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListTransferConfigsRequest actualRequest = (ListTransferConfigsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ParentNames.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -457,7 +457,7 @@ public class DataTransferServiceClientTest {
     mockDataTransferService.addException(exception);
 
     try {
-      ParentName parent = ProjectName.of("[PROJECT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
 
       client.listTransferConfigs(parent);
       Assert.fail("No exception raised");
@@ -506,6 +506,45 @@ public class DataTransferServiceClientTest {
       Timestamp endTime = Timestamp.newBuilder().build();
 
       client.scheduleTransferRuns(parent, startTime, endTime);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void startManualTransferRunsTest() {
+    StartManualTransferRunsResponse expectedResponse =
+        StartManualTransferRunsResponse.newBuilder().build();
+    mockDataTransferService.addResponse(expectedResponse);
+
+    StartManualTransferRunsRequest request = StartManualTransferRunsRequest.newBuilder().build();
+
+    StartManualTransferRunsResponse actualResponse = client.startManualTransferRuns(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartManualTransferRunsRequest actualRequest =
+        (StartManualTransferRunsRequest) actualRequests.get(0);
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void startManualTransferRunsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDataTransferService.addException(exception);
+
+    try {
+      StartManualTransferRunsRequest request = StartManualTransferRunsRequest.newBuilder().build();
+
+      client.startManualTransferRuns(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -731,45 +770,6 @@ public class DataTransferServiceClientTest {
       DataSourceName name = ProjectDataSourceName.of("[PROJECT]", "[DATA_SOURCE]");
 
       client.checkValidCreds(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void startManualTransferRunsTest() {
-    StartManualTransferRunsResponse expectedResponse =
-        StartManualTransferRunsResponse.newBuilder().build();
-    mockDataTransferService.addResponse(expectedResponse);
-
-    StartManualTransferRunsRequest request = StartManualTransferRunsRequest.newBuilder().build();
-
-    StartManualTransferRunsResponse actualResponse = client.startManualTransferRuns(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    StartManualTransferRunsRequest actualRequest =
-        (StartManualTransferRunsRequest) actualRequests.get(0);
-
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void startManualTransferRunsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDataTransferService.addException(exception);
-
-    try {
-      StartManualTransferRunsRequest request = StartManualTransferRunsRequest.newBuilder().build();
-
-      client.startManualTransferRuns(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

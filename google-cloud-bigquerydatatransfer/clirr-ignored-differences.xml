@@ -8,15 +8,4 @@
     <method>* *(com.google.cloud.bigquery.datatransfer.v1.ParentName*)</method>
     <to>* *(com.google.cloud.bigquery.datatransfer.v1.ProjectName*)</to>
   </difference>
-<!--   <difference>
-    <differenceType>7005</differenceType>
-    <className>com/google/cloud/bigquery/datatransfer/v1/DataTransferServiceClient</className>
-    
-  </difference>
-  <difference>
-    <differenceType>7005</differenceType>
-    <className>com/google/cloud/bigquery/datatransfer/v1/DataTransferServiceClient</className>
-    <method>* listTransferConfigs(com.google.cloud.bigquery.datatransfer.v1.ParentName)</method>
-    <to>* listTransferConfigs(com.google.cloud.bigquery.datatransfer.v1.ProjectName)</to>
-  </difference> -->
 </differences>

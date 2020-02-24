@@ -15,6 +15,10 @@
     <differenceType>8001</differenceType>
     <className>com/google/cloud/bigquery/datatransfer/v1/UntypedParentName</className>
   </difference>
+    <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/bigquery/datatransfer/v1/ParentName</className>
+  </difference>
   <difference>
     <differenceType>5001</differenceType>
     <className>com/google/cloud/bigquery/datatransfer/v1/ProjectName</className>

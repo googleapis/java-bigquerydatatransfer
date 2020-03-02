@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.123.1](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.123.0...v0.123.1) (2020-03-02)
+
+
+### Dependencies
+
+* update core dependencies ([#63](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/63)) ([dd0d481](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/dd0d481f0dca29b0195d514232decafc2c5178d9))
+
 ## [0.123.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.122.0...v0.123.0) (2020-02-17)
 
 

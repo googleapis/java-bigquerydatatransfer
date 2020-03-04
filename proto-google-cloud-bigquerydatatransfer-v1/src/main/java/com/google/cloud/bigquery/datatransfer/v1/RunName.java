@@ -85,10 +85,12 @@ public class RunName implements ResourceName {
     return new Builder();
   }
 
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectTransferConfigRunBuilder() {
     return new Builder();
   }
 
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationTransferConfigRunBuilder
       newProjectLocationTransferConfigRunBuilder() {
     return new ProjectLocationTransferConfigRunBuilder();
@@ -106,6 +108,7 @@ public class RunName implements ResourceName {
         .build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static RunName ofProjectTransferConfigRunName(
       String project, String transferConfig, String run) {
     return newProjectTransferConfigRunBuilder()
@@ -115,6 +118,7 @@ public class RunName implements ResourceName {
         .build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static RunName ofProjectLocationTransferConfigRunName(
       String project, String location, String transferConfig, String run) {
     return newProjectLocationTransferConfigRunBuilder()
@@ -134,6 +138,7 @@ public class RunName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectTransferConfigRunName(
       String project, String transferConfig, String run) {
     return newBuilder()
@@ -144,6 +149,7 @@ public class RunName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationTransferConfigRunName(
       String project, String location, String transferConfig, String run) {
     return newProjectLocationTransferConfigRunBuilder()
@@ -292,6 +298,7 @@ public class RunName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/transferConfigs/{transfer_config}/runs/{run}.
    */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationTransferConfigRunBuilder {
 
     private String project;
@@ -347,7 +354,7 @@ public class RunName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (o != null || getClass() == o.getClass()) {
       RunName that = (RunName) o;
       return (Objects.equals(this.project, that.project))
           && (Objects.equals(this.transferConfig, that.transferConfig))

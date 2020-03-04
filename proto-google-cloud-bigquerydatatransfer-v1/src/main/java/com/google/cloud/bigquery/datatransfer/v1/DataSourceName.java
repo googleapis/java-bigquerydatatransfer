@@ -77,10 +77,12 @@ public class DataSourceName implements ResourceName {
     return new Builder();
   }
 
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectDataSourceBuilder() {
     return new Builder();
   }
 
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationDataSourceBuilder newProjectLocationDataSourceBuilder() {
     return new ProjectLocationDataSourceBuilder();
   }
@@ -93,10 +95,12 @@ public class DataSourceName implements ResourceName {
     return newProjectDataSourceBuilder().setProject(project).setDataSource(dataSource).build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DataSourceName ofProjectDataSourceName(String project, String dataSource) {
     return newProjectDataSourceBuilder().setProject(project).setDataSource(dataSource).build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DataSourceName ofProjectLocationDataSourceName(
       String project, String location, String dataSource) {
     return newProjectLocationDataSourceBuilder()
@@ -110,10 +114,12 @@ public class DataSourceName implements ResourceName {
     return newBuilder().setProject(project).setDataSource(dataSource).build().toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectDataSourceName(String project, String dataSource) {
     return newBuilder().setProject(project).setDataSource(dataSource).build().toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationDataSourceName(
       String project, String location, String dataSource) {
     return newProjectLocationDataSourceBuilder()
@@ -239,6 +245,7 @@ public class DataSourceName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/dataSources/{data_source}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationDataSourceBuilder {
 
     private String project;
@@ -284,7 +291,7 @@ public class DataSourceName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (o != null || getClass() == o.getClass()) {
       DataSourceName that = (DataSourceName) o;
       return (Objects.equals(this.project, that.project))
           && (Objects.equals(this.dataSource, that.dataSource))

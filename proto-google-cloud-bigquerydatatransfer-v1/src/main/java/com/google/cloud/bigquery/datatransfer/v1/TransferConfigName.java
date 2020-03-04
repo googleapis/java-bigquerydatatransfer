@@ -77,10 +77,12 @@ public class TransferConfigName implements ResourceName {
     return new Builder();
   }
 
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectTransferConfigBuilder() {
     return new Builder();
   }
 
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationTransferConfigBuilder newProjectLocationTransferConfigBuilder() {
     return new ProjectLocationTransferConfigBuilder();
   }
@@ -96,6 +98,7 @@ public class TransferConfigName implements ResourceName {
         .build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static TransferConfigName ofProjectTransferConfigName(
       String project, String transferConfig) {
     return newProjectTransferConfigBuilder()
@@ -104,6 +107,7 @@ public class TransferConfigName implements ResourceName {
         .build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static TransferConfigName ofProjectLocationTransferConfigName(
       String project, String location, String transferConfig) {
     return newProjectLocationTransferConfigBuilder()
@@ -117,10 +121,12 @@ public class TransferConfigName implements ResourceName {
     return newBuilder().setProject(project).setTransferConfig(transferConfig).build().toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectTransferConfigName(String project, String transferConfig) {
     return newBuilder().setProject(project).setTransferConfig(transferConfig).build().toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationTransferConfigName(
       String project, String location, String transferConfig) {
     return newProjectLocationTransferConfigBuilder()
@@ -246,6 +252,7 @@ public class TransferConfigName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/transferConfigs/{transfer_config}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationTransferConfigBuilder {
 
     private String project;
@@ -291,7 +298,7 @@ public class TransferConfigName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (o != null || getClass() == o.getClass()) {
       TransferConfigName that = (TransferConfigName) o;
       return (Objects.equals(this.project, that.project))
           && (Objects.equals(this.transferConfig, that.transferConfig))

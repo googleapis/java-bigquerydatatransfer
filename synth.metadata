@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-04-08T22:23:21.393418Z",
+  "updateTime": "2020-04-08T22:24:14.682903Z",
   "sources": [
     {
       "generator": {
@@ -12,7 +12,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquerydatatransfer.git",
-        "sha": "f76e50333e486548bd98026dee4e95527e896afd"
+        "sha": "47e667a8768804c0d49c93a9c142b64bdfc361d2"
       }
     },
     {

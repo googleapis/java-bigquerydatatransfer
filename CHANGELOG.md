@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.126.1](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.126.0...v0.126.1) (2020-04-14)
+
+
+### Dependencies
+
+* update core dependencies to v1.56.0 ([#111](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/111)) ([f7547a3](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/f7547a3f0759ee8f5973ad31d7b037680cff3c56))
+* update dependency com.google.guava:guava-bom to v29 ([#118](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/118)) ([dd77bc1](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/dd77bc11ecee5c9522fe63ca1e40da9562168863))
+
 ## [0.126.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.125.2...v0.126.0) (2020-04-05)
 
 

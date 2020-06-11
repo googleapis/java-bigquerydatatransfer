@@ -47,11 +47,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquerydatatransfer:0.127.3-beta'
+compile 'com.google.cloud:google-cloud-bigquerydatatransfer:0.128.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "0.127.3-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "0.128.0-beta"
 ```
 [//]: # ({x-version-update-end})
 

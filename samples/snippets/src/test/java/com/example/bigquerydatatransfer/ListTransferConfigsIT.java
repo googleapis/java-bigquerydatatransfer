@@ -98,7 +98,6 @@ public class ListTransferConfigsIT {
     String result = bout.toString();
     name = result.substring(result.indexOf(".") + 1);
 
-    bout = new ByteArrayOutputStream();
     System.setOut(realOut);
   }
 

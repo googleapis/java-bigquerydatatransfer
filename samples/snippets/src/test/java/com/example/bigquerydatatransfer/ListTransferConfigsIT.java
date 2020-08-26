@@ -43,6 +43,7 @@ public class ListTransferConfigsIT {
   private String displayName;
   private String datasetName;
   private PrintStream out;
+  private PrintStream realOut;
 
   private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
 
@@ -61,6 +62,7 @@ public class ListTransferConfigsIT {
 
   @Before
   public void setUp() {
+    realOut = System.out;
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -97,8 +99,7 @@ public class ListTransferConfigsIT {
     name = result.substring(result.indexOf(".") + 1);
 
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
+    System.setOut(realOut);
   }
 
   @After
@@ -107,7 +108,7 @@ public class ListTransferConfigsIT {
     DeleteScheduledQuery.deleteScheduledQuery(name);
     // delete a temporary dataset
     bigquery.delete(datasetName, BigQuery.DatasetDeleteOption.deleteContents());
-    System.setOut(null);
+    System.setOut(realOut);
   }
 
   @Test

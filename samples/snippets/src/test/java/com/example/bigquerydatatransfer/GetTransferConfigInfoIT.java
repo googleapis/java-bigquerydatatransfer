@@ -26,6 +26,7 @@ import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -43,6 +44,7 @@ public class GetTransferConfigInfoIT {
   private String displayName;
   private String datasetName;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
 
@@ -63,10 +65,12 @@ public class GetTransferConfigInfoIT {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
 
     displayName = "MY_SCHEDULE_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
     datasetName = "MY_DATASET_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
+
     // create a temporary dataset
     bigquery = BigQueryOptions.getDefaultInstance().getService();
     bigquery.create(DatasetInfo.of(datasetName));
@@ -95,10 +99,6 @@ public class GetTransferConfigInfoIT {
     CreateScheduledQuery.createScheduledQuery(PROJECT_ID, transferConfig);
     String result = bout.toString();
     name = result.substring(result.indexOf(".") + 1);
-
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
   }
 
   @After
@@ -107,11 +107,15 @@ public class GetTransferConfigInfoIT {
     DeleteScheduledQuery.deleteScheduledQuery(name);
     // delete a temporary dataset
     bigquery.delete(datasetName, BigQuery.DatasetDeleteOption.deleteContents());
-    System.setOut(null);
+
+    // restores print statements in the original method
+    System.setOut(originalPrintStream);
+    String output = new String(bout.toByteArray());
+    System.out.println(output);
   }
 
   @Test
-  public void testGetTransferConfigInfo() {
+  public void testGetTransferConfigInfo() throws IOException {
     GetTransferConfigInfo.getTransferConfigInfo(name);
     assertThat(bout.toString()).contains("Config info retrieved successfully.");
   }

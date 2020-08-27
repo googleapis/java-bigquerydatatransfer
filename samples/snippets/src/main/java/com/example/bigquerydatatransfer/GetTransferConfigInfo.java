@@ -26,7 +26,7 @@ import java.io.IOException;
 // Sample to get config info.
 public class GetTransferConfigInfo {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String configId = "MY_CONFIG_ID";
     // i.e projects/{project_id}/transferConfigs/{config_id}` or
@@ -34,13 +34,13 @@ public class GetTransferConfigInfo {
     getTransferConfigInfo(configId);
   }
 
-  public static void getTransferConfigInfo(String configId) {
+  public static void getTransferConfigInfo(String configId) throws IOException {
     try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
       GetTransferConfigRequest request =
           GetTransferConfigRequest.newBuilder().setName(configId).build();
       TransferConfig info = dataTransferServiceClient.getTransferConfig(request);
-      System.out.print("Config info retrieved successfully." + info.getName());
-    } catch (IOException | ApiException ex) {
+      System.out.printf("\nConfig info retrieved successfully.name : %s \n", info.getName());
+    } catch (ApiException ex) {
       System.out.print("config not found." + ex.toString());
     }
   }

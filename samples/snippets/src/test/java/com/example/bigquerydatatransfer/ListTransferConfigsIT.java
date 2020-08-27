@@ -111,7 +111,7 @@ public class ListTransferConfigsIT {
     // restores print statements in the original method
     System.setOut(originalPrintStream);
     String output = new String(bout.toByteArray());
-    System.out.println("> " + output);
+    System.out.println(output);
   }
 
   @Test

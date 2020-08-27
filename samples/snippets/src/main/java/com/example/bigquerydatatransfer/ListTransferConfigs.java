@@ -26,13 +26,13 @@ import java.io.IOException;
 // Sample to get list of transfer config
 public class ListTransferConfigs {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     final String projectId = "MY_PROJECT_ID";
     listTransferConfigs(projectId);
   }
 
-  public static void listTransferConfigs(String projectId) {
+  public static void listTransferConfigs(String projectId) throws IOException {
     try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
       ProjectName parent = ProjectName.of(projectId);
       ListTransferConfigsRequest request =
@@ -40,8 +40,8 @@ public class ListTransferConfigs {
       dataTransferServiceClient
           .listTransferConfigs(request)
           .iterateAll()
-          .forEach(config -> System.out.printf("Success! Config ID : %s", config.getName()));
-    } catch (IOException | ApiException ex) {
+          .forEach(config -> System.out.printf("\nSuccess! Config ID : %s\n", config.getName()));
+    } catch (ApiException ex) {
       System.out.print("Config list not found due to error." + ex.toString());
     }
   }

@@ -27,6 +27,7 @@ import com.google.cloud.bigquery.datatransfer.v1.TransferState;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,6 +45,7 @@ public class CreateScheduledQueryIT {
   private String displayName;
   private String datasetName;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
 
@@ -67,22 +69,27 @@ public class CreateScheduledQueryIT {
     // create a temporary dataset
     bigquery = BigQueryOptions.getDefaultInstance().getService();
     bigquery.create(DatasetInfo.of(datasetName));
+
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
-  public void tearDown() {
+  public void tearDown() throws IOException {
     // Clean up
     DeleteScheduledQuery.deleteScheduledQuery(name);
     // delete a temporary dataset
     bigquery.delete(datasetName, BigQuery.DatasetDeleteOption.deleteContents());
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
+    System.out.println(bout.toString());
   }
 
   @Test
-  public void testCreateScheduledQuery() {
+  public void testCreateScheduledQuery() throws IOException {
     String query =
         "SELECT CURRENT_TIMESTAMP() as current_time, @run_time as intended_run_time, "
             + "@run_date as intended_run_date, 17 as some_integer";
@@ -106,7 +113,7 @@ public class CreateScheduledQueryIT {
             .build();
     CreateScheduledQuery.createScheduledQuery(PROJECT_ID, transferConfig);
     String result = bout.toString();
-    name = result.substring(result.indexOf(".") + 1);
-    assertThat(result).contains("Scheduled query created successfully.");
+    name = result.substring(result.indexOf(":") + 1, result.length() - 1);
+    assertThat(result).contains("Scheduled query created successfully");
   }
 }

@@ -34,6 +34,8 @@ import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -41,6 +43,7 @@ import org.junit.Test;
 
 public class ListTransferConfigsIT {
 
+  private static final Logger LOGGER = Logger.getLogger(ListTransferConfigsIT.class.getName());
   private BigQuery bigquery;
   private ByteArrayOutputStream bout;
   private String name;
@@ -120,7 +123,7 @@ public class ListTransferConfigsIT {
     // restores print statements in the original method
     System.out.flush();
     System.setOut(originalPrintStream);
-    System.out.println(bout.toString());
+    LOGGER.log(Level.INFO, bout.toString());
   }
 
   @Test

@@ -44,7 +44,6 @@ import org.junit.Test;
 public class DeleteScheduledQueryIT {
 
   private static final Logger LOGGER = Logger.getLogger(DeleteScheduledQueryIT.class.getName());
-
   private BigQuery bigquery;
   private ByteArrayOutputStream bout;
   private String name;

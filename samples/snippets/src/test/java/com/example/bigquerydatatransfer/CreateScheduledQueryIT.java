@@ -41,7 +41,7 @@ import org.junit.Test;
 
 public class CreateScheduledQueryIT {
 
-  private static final Logger LOGGER = Logger.getLogger(CreateScheduledQueryIT.class.getName());
+  private static final Logger LOG = Logger.getLogger(CreateScheduledQueryIT.class.getName());
   private BigQuery bigquery;
   private ByteArrayOutputStream bout;
   private String name;
@@ -88,7 +88,7 @@ public class CreateScheduledQueryIT {
     // restores print statements in the original method
     System.out.flush();
     System.setOut(originalPrintStream);
-    LOGGER.log(Level.INFO, bout.toString());
+    LOG.log(Level.INFO, bout.toString());
   }
 
   @Test

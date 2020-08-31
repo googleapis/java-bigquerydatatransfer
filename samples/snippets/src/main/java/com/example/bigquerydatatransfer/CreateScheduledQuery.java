@@ -66,9 +66,9 @@ public class CreateScheduledQuery {
               .setTransferConfig(transferConfig)
               .build();
       TransferConfig config = dataTransferServiceClient.createTransferConfig(request);
-      System.out.println("Scheduled query created successfully :" + config.getName());
+      System.out.println("\nScheduled query created successfully :" + config.getName());
     } catch (ApiException ex) {
-      System.out.print("Scheduled query was not created." + ex.toString());
+      System.out.print("\nScheduled query was not created." + ex.toString());
     }
   }
 }

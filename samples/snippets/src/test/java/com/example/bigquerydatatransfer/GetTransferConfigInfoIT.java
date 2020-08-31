@@ -43,7 +43,7 @@ import org.junit.Test;
 
 public class GetTransferConfigInfoIT {
 
-  private static final Logger LOGGER = Logger.getLogger(GetTransferConfigInfoIT.class.getName());
+  private static final Logger LOG = Logger.getLogger(GetTransferConfigInfoIT.class.getName());
   private BigQuery bigquery;
   private ByteArrayOutputStream bout;
   private String name;
@@ -108,7 +108,7 @@ public class GetTransferConfigInfoIT {
               .setTransferConfig(transferConfig)
               .build();
       name = dataTransferServiceClient.createTransferConfig(request).getName();
-      System.out.println("Scheduled query created successfully :" + name);
+      System.out.println("\nScheduled query created successfully :" + name);
     }
   }
 
@@ -122,7 +122,7 @@ public class GetTransferConfigInfoIT {
     // restores print statements in the original method
     System.out.flush();
     System.setOut(originalPrintStream);
-    LOGGER.log(Level.INFO, bout.toString());
+    LOG.log(Level.INFO, bout.toString());
   }
 
   @Test

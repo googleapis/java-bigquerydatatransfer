@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.11](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.10...v1.0.11) (2020-09-08)
+
+
+### Documentation
+
+* **samples:** add run notification ([#328](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/328)) ([2670cb1](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/2670cb1080c879fc8eb23d86b5d5e42b23a4aa37))
+
 ### [1.0.10](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.0.9...v1.0.10) (2020-09-03)
 
 

@@ -16,6 +16,7 @@
 
 package com.example.bigquerydatatransfer;
 
+// [START bigquerydatatransfer_run_notification]
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
@@ -27,6 +28,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+// Sample to get run notification
 public class RunNotification {
 
   public static void main(String[] args) throws IOException {
@@ -73,3 +75,4 @@ public class RunNotification {
     }
   }
 }
+// [END bigquerydatatransfer_run_notification]

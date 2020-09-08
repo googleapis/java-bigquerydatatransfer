@@ -89,13 +89,13 @@ public class RunNotificationIT {
     }
     // create a temporary subscriber
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-      ProjectTopicName topic_name = ProjectTopicName.of(PROJECT_ID, topicName);
+      ProjectTopicName projectTopicName = ProjectTopicName.of(PROJECT_ID, topicName);
       ProjectSubscriptionName subscriptionName =
           ProjectSubscriptionName.of(PROJECT_ID, subscriberName);
       subscriptionAdminClient.createSubscription(
           Subscription.newBuilder()
               .setName(subscriptionName.toString())
-              .setTopic(topic_name.toString())
+              .setTopic(projectTopicName.toString())
               .setEnableMessageOrdering(true)
               .build());
     }

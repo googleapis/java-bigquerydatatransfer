@@ -85,8 +85,7 @@ public class RunDetailsIT {
     String query =
         "SELECT CURRENT_TIMESTAMP() as current_time, @run_time as intended_run_time, "
             + "@run_date as intended_run_date, 17 as some_integer";
-    String destinationTableName =
-        "MY_DESTINATION_TABLE_" + UUID.randomUUID().toString().substring(0, 8) + "_{run_date}";
+    String destinationTableName = "MY_DESTINATION_TABLE_" + ID + "_{run_date}";
     Map<String, Value> params = new HashMap<>();
     params.put("query", Value.newBuilder().setStringValue(query).build());
     params.put(
@@ -110,7 +109,7 @@ public class RunDetailsIT {
               .setTransferConfig(transferConfig)
               .build();
       name = dataTransferServiceClient.createTransferConfig(request).getName();
-      System.out.println("\nScheduled query created successfully :" + name);
+      System.out.println("Scheduled query created successfully :" + name);
     }
     try (DataTransferServiceClient client = DataTransferServiceClient.create()) {
       client.listTransferRuns(name).iterateAll().forEach(run -> runName = run.getName());

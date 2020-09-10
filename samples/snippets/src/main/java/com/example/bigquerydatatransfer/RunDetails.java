@@ -28,9 +28,10 @@ public class RunDetails {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-    String runId = "MY_RUN_ID";
+    // runId examples:
     // `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
     // `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
+    String runId = "MY_RUN_ID";
     runDetails(runId);
   }
 

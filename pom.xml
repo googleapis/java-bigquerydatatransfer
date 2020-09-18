@@ -119,6 +119,7 @@
     <module>grpc-google-cloud-bigquerydatatransfer-v1</module>
     <module>google-cloud-bigquerydatatransfer</module>
   <module>google-cloud-bigquerydatatransfer-bom</module>
+    <module>samples</module>
   </modules>
 
   <reporting>

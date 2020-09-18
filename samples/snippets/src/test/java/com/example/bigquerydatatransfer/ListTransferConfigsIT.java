@@ -36,7 +36,7 @@ public class ListTransferConfigsIT {
   private PrintStream out;
   private PrintStream originalPrintStream;
 
-  private static final String CONFIG_NAME = requireEnvVar("DTS_TRANSFER_CONFIG_NAME");
+  private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
 
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
@@ -69,7 +69,7 @@ public class ListTransferConfigsIT {
 
   @Test
   public void testListTransferConfigs() throws IOException {
-    ListTransferConfigs.listTransferConfigs(CONFIG_NAME);
+    ListTransferConfigs.listTransferConfigs(PROJECT_ID);
     assertThat(bout.toString()).contains("Success! Config ID ");
   }
 }

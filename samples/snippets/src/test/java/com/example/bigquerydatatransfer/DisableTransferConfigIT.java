@@ -71,7 +71,7 @@ public class DisableTransferConfigIT {
   }
 
   @Test
-  public void testUpdateTransferConfig() throws IOException {
+  public void testDisableTransferConfig() throws IOException {
     TransferConfig transferConfig =
         TransferConfig.newBuilder().setName(CONFIG_NAME).setDisabled(true).build();
     FieldMask updateMask = FieldMaskUtil.fromString("disabled");

@@ -127,6 +127,6 @@ public class DeleteTransferConfigIT {
   public void testDeleteTransferConfig() throws IOException {
     // delete scheduled query that was just created
     DeleteTransferConfig.deleteTransferConfig(name);
-    assertThat(bout.toString()).contains("Transfer config deleted successfully.");
+    assertThat(bout.toString()).contains("Transfer config deleted successfully");
   }
 }

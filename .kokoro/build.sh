@@ -84,7 +84,7 @@ samples)
         fi
 
         # run ITs in all three samples/ subdirectories nightly
-        pushd SAMPLES_DIR/
+        pushd ${SAMPLES_DIR}
         mvn -B \
           -Penable-samples \
           -DtrimStackTrace=false \

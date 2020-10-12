@@ -70,7 +70,7 @@ integration)
     ;;
 samples)
     SAMPLES_DIR=samples
-    if [[ -f SAMPLES_DIR/pom.xml ]]
+    if [[ -f ${SAMPLES_DIR}/pom.xml ]]
     then
         if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigquerydatatransfer-samples-secrets" ]
         then

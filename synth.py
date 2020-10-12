@@ -38,4 +38,5 @@ java.common_templates(excludes=[
     '.kokoro/build.sh',
     '.kokoro/nightly/samples.cfg',
     '.kokoro/presubmit/samples.cfg',
+    '.kokoro/presubmit/common.cfg',
 ])

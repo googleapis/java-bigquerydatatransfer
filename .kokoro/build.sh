@@ -76,6 +76,21 @@ samples)
             source "${KOKORO_GFILE_DIR}/secret_manager/java-bigquerydatatransfer-samples-secrets"
         fi
 
+        # only run ITs in snapshot/ on presubmit PRs
+        if [[ ${CI_TYPE} == "presubmit" ]]
+        then
+          cd samples/snapshot
+          mvn -B \
+            -Penable-samples \
+            -DtrimStackTrace=false \
+            -Dclirr.skip=true \
+            -Denforcer.skip=true \
+            -fae \
+            verify
+          RETURN_CODE=$?
+        fi
+
+        # run ITs in all three samples/ subdirectories nightly
         pushd samples
         mvn -B \
           -Penable-samples \

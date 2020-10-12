@@ -78,7 +78,7 @@ samples)
         fi
 
         # only run ITs in snapshot/ on presubmit PRs
-        if [[ -nz ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
+        if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
         then
           SAMPLES_DIR=samples/snapshot
         fi

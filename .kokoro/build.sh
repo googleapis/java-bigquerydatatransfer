@@ -70,6 +70,12 @@ integration)
     ;;
 samples)
     SAMPLES_DIR=samples
+    # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ subdirectories otherwise.
+    if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
+    then
+      SAMPLES_DIR=samples/snapshot
+    fi
+
     if [[ -f ${SAMPLES_DIR}/pom.xml ]]
     then
         if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigquerydatatransfer-samples-secrets" ]
@@ -77,13 +83,6 @@ samples)
             source "${KOKORO_GFILE_DIR}/secret_manager/java-bigquerydatatransfer-samples-secrets"
         fi
 
-        # only run ITs in snapshot/ on presubmit PRs
-        if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
-        then
-          SAMPLES_DIR=samples/snapshot
-        fi
-
-        # run ITs in all three samples/ subdirectories nightly
         pushd ${SAMPLES_DIR}
         mvn -B \
           -Penable-samples \

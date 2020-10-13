@@ -86,8 +86,8 @@ public class ScheduleBackFillIT {
             .build();
     Timestamp endDate =
         Timestamp.newBuilder()
-            .setSeconds(instant.getEpochSecond())
-            .setNanos(instant.getNano())
+            .setSeconds(instant.plus(10, ChronoUnit.DAYS).getEpochSecond())
+            .setNanos(instant.plus(10, ChronoUnit.DAYS).getNano())
             .build();
     TransferConfig transferConfig =
         TransferConfig.newBuilder()

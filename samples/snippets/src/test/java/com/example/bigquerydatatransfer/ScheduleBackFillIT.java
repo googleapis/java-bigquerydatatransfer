@@ -79,15 +79,21 @@ public class ScheduleBackFillIT {
   public void testScheduleBackFill() throws IOException {
     Clock clock = Clock.systemDefaultZone();
     Instant instant = clock.instant();
+    Timestamp startDate =
+        Timestamp.newBuilder()
+            .setSeconds(instant.minus(10, ChronoUnit.DAYS).getEpochSecond())
+            .setNanos(instant.minus(10, ChronoUnit.DAYS).getNano())
+            .build();
     Timestamp endDate =
         Timestamp.newBuilder()
-            .setSeconds(instant.plus(10, ChronoUnit.DAYS).getEpochSecond())
-            .setNanos(instant.plus(10, ChronoUnit.DAYS).getNano())
+            .setSeconds(instant.minus(5, ChronoUnit.DAYS).getEpochSecond())
+            .setNanos(instant.minus(5, ChronoUnit.DAYS).getNano())
             .build();
     TransferConfig transferConfig =
         TransferConfig.newBuilder()
             .setName(CONFIG_NAME)
-            .setScheduleOptions(ScheduleOptions.newBuilder().setEndTime(endDate).build())
+            .setScheduleOptions(
+                ScheduleOptions.newBuilder().setStartTime(startDate).setEndTime(endDate).build())
             .build();
     FieldMask updateMask = FieldMaskUtil.fromString("end_time");
     ScheduleBackFill.scheduleBackFill(transferConfig, updateMask);

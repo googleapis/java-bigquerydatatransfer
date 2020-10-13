@@ -21,7 +21,6 @@ import static junit.framework.TestCase.assertNotNull;
 
 import com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
-import com.google.common.collect.ImmutableList;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.util.FieldMaskUtil;
@@ -80,11 +79,6 @@ public class ScheduleBackFillIT {
   public void testScheduleBackFill() throws IOException {
     Clock clock = Clock.systemDefaultZone();
     Instant instant = clock.instant();
-    Timestamp startDate =
-        Timestamp.newBuilder()
-            .setSeconds(instant.getEpochSecond())
-            .setNanos(instant.getNano())
-            .build();
     Timestamp endDate =
         Timestamp.newBuilder()
             .setSeconds(instant.plus(10, ChronoUnit.DAYS).getEpochSecond())
@@ -93,10 +87,9 @@ public class ScheduleBackFillIT {
     TransferConfig transferConfig =
         TransferConfig.newBuilder()
             .setName(CONFIG_NAME)
-            .setScheduleOptions(
-                ScheduleOptions.newBuilder().setStartTime(startDate).setEndTime(endDate).build())
+            .setScheduleOptions(ScheduleOptions.newBuilder().setEndTime(endDate).build())
             .build();
-    FieldMask updateMask = FieldMaskUtil.fromStringList(ImmutableList.of("start_time", "end_time"));
+    FieldMask updateMask = FieldMaskUtil.fromString("end_time");
     ScheduleBackFill.scheduleBackFill(transferConfig, updateMask);
     assertThat(bout.toString()).contains("Schedule backfill updated successfully :");
   }

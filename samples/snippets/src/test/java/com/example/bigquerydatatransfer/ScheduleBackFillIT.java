@@ -19,7 +19,6 @@ package com.example.bigquerydatatransfer;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
@@ -90,8 +89,6 @@ public class ScheduleBackFillIT {
     bigquery = BigQueryOptions.getDefaultInstance().getService();
     bigquery.create(DatasetInfo.of(datasetName));
 
-    ServiceAccountCredentials credentials =
-        (ServiceAccountCredentials) ServiceAccountCredentials.getApplicationDefault();
     // create a scheduled query
     String query =
         "SELECT CURRENT_TIMESTAMP() as current_time, @run_time as intended_run_time, "
@@ -118,11 +115,9 @@ public class ScheduleBackFillIT {
           CreateTransferConfigRequest.newBuilder()
               .setParent(parent.toString())
               .setTransferConfig(transferConfig)
-              .setServiceAccountName(credentials.getClientEmail())
               .build();
       name = client.createTransferConfig(request).getName();
       System.out.println("Scheduled query created successfully :" + name);
-      System.out.println("Service account : " + credentials.getClientEmail());
     }
   }
 

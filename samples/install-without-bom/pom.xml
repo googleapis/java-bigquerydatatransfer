@@ -23,7 +23,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-
   <dependencies>
     <!-- [START bigquerydatatransfer_install_without_bom] -->
     <dependency>

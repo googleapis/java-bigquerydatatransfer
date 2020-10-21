@@ -19,12 +19,16 @@ package com.example.bigquerydatatransfer;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.google.protobuf.util.FieldMaskUtil;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -56,11 +60,16 @@ public class ScheduleBackFillIT {
   }
 
   @Before
-  public void setUp() {
+  public void setUp() throws IOException {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
+    // enable transfer config
+    TransferConfig transferConfig =
+        TransferConfig.newBuilder().setName(CONFIG_NAME).setDisabled(false).build();
+    FieldMask updateMask = FieldMaskUtil.fromString("disabled");
+    ReEnableTransferConfig.reEnableTransferConfig(transferConfig, updateMask);
   }
 
   @After

@@ -82,7 +82,7 @@ public class ScheduleBackFillIT {
   @Test
   public void testScheduleBackFill() throws IOException {
     Clock clock = Clock.systemDefaultZone();
-    Instant instant = clock.instant();
+    Instant instant = clock.instant().truncatedTo(ChronoUnit.DAYS);
     Timestamp startTime =
         Timestamp.newBuilder()
             .setSeconds(instant.minus(5, ChronoUnit.DAYS).getEpochSecond())

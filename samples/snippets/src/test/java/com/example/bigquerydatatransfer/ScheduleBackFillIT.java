@@ -22,13 +22,12 @@ import static junit.framework.TestCase.assertNotNull;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
+import com.google.protobuf.util.FieldMaskUtil;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import com.google.protobuf.util.FieldMaskUtil;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;

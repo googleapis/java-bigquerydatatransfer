@@ -35,6 +35,7 @@ public class CreateRedshiftTransfer {
     // TODO(developer): Replace these variables before running the sample.
     final String projectId = "MY_PROJECT_ID";
     String datasetId = "MY_DATASET_ID";
+    String datasetRegion = "US";
     String jdbcUrl = "MY_JDBC_URL_CONNECTION_REDSHIFT";
     String dbUserName = "MY_USERNAME";
     String dbPassword = "MY_PASSWORD";
@@ -58,6 +59,7 @@ public class CreateRedshiftTransfer {
     TransferConfig transferConfig =
         TransferConfig.newBuilder()
             .setDestinationDatasetId(datasetId)
+            .setDatasetRegion(datasetRegion)
             .setDisplayName("Your Redshift Config Name")
             .setDataSourceId("redshift")
             .setParams(Struct.newBuilder().putAllFields(params).build())

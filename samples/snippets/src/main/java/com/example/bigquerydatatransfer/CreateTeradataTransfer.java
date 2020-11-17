@@ -36,7 +36,7 @@ public class CreateTeradataTransfer {
     final String projectId = "MY_PROJECT_ID";
     String datasetId = "MY_DATASET_ID";
     String databaseType = "Teradata";
-    String bucket = "gs://cloud-sample-data/";
+    String bucket = "cloud-sample-data";
     String databaseName = "MY_DATABASE_NAME";
     String tableNamePatterns = "*";
     String serviceAccount = "MY_SERVICE_ACCOUNT";

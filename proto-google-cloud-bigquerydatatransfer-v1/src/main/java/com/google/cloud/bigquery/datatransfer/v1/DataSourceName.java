@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,29 +22,47 @@ import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class DataSourceName implements ResourceName {
-
-  @Deprecated
-  protected DataSourceName() {}
-
-  private static final PathTemplate PROJECT_DATA_SOURCE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_DATA_SOURCE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/dataSources/{data_source}");
-  private static final PathTemplate PROJECT_LOCATION_DATA_SOURCE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_DATA_SOURCE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/dataSources/{data_source}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String dataSource;
+  private final String location;
 
-  private String project;
-  private String dataSource;
-  private String location;
+  @Deprecated
+  protected DataSourceName() {
+    project = null;
+    dataSource = null;
+    location = null;
+  }
+
+  private DataSourceName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    dataSource = Preconditions.checkNotNull(builder.getDataSource());
+    location = null;
+    pathTemplate = PROJECT_DATA_SOURCE;
+  }
+
+  private DataSourceName(ProjectLocationDataSourceBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    dataSource = Preconditions.checkNotNull(builder.getDataSource());
+    pathTemplate = PROJECT_LOCATION_DATA_SOURCE;
+  }
 
   public String getProject() {
     return project;
@@ -56,19 +74,6 @@ public class DataSourceName implements ResourceName {
 
   public String getLocation() {
     return location;
-  }
-
-  private DataSourceName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    dataSource = Preconditions.checkNotNull(builder.getDataSource());
-    pathTemplate = PROJECT_DATA_SOURCE_PATH_TEMPLATE;
-  }
-
-  private DataSourceName(ProjectLocationDataSourceBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    dataSource = Preconditions.checkNotNull(builder.getDataSource());
-    pathTemplate = PROJECT_LOCATION_DATA_SOURCE_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -90,12 +95,12 @@ public class DataSourceName implements ResourceName {
   }
 
   public static DataSourceName of(String project, String dataSource) {
-    return newProjectDataSourceBuilder().setProject(project).setDataSource(dataSource).build();
+    return newBuilder().setProject(project).setDataSource(dataSource).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DataSourceName ofProjectDataSourceName(String project, String dataSource) {
-    return newProjectDataSourceBuilder().setProject(project).setDataSource(dataSource).build();
+    return newBuilder().setProject(project).setDataSource(dataSource).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -132,36 +137,55 @@ public class DataSourceName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_DATA_SOURCE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_DATA_SOURCE_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_DATA_SOURCE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_DATA_SOURCE.match(formattedString);
       return ofProjectDataSourceName(matchMap.get("project"), matchMap.get("data_source"));
-    } else if (PROJECT_LOCATION_DATA_SOURCE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_LOCATION_DATA_SOURCE_PATH_TEMPLATE.match(formattedString);
+    } else if (PROJECT_LOCATION_DATA_SOURCE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_DATA_SOURCE.match(formattedString);
       return ofProjectLocationDataSourceName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("data_source"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("DataSourceName.parse: formattedString not in valid format");
+  }
+
+  public static List<DataSourceName> parseList(List<String> formattedStrings) {
+    List<DataSourceName> list = new ArrayList<>(formattedStrings.size());
+    for (String formattedString : formattedStrings) {
+      list.add(parse(formattedString));
+    }
+    return list;
+  }
+
+  public static List<String> toStringList(List<DataSourceName> values) {
+    List<String> list = new ArrayList<>(values.size());
+    for (DataSourceName value : values) {
+      if (Objects.isNull(value)) {
+        list.add("");
+      } else {
+        list.add(value.toString());
+      }
+    }
+    return list;
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_DATA_SOURCE_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_LOCATION_DATA_SOURCE_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_DATA_SOURCE.matches(formattedString)
+        || PROJECT_LOCATION_DATA_SOURCE.matches(formattedString);
   }
 
   @Override
   public Map<String, String> getFieldValuesMap() {
-    if (fieldValuesMap == null) {
+    if (Objects.isNull(fieldValuesMap)) {
       synchronized (this) {
-        if (fieldValuesMap == null) {
+        if (Objects.isNull(fieldValuesMap)) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (project != null) {
+          if (!Objects.isNull(project)) {
             fieldMapBuilder.put("project", project);
           }
-          if (dataSource != null) {
+          if (!Objects.isNull(dataSource)) {
             fieldMapBuilder.put("data_source", dataSource);
           }
-          if (location != null) {
+          if (!Objects.isNull(location)) {
             fieldMapBuilder.put("location", location);
           }
           fieldValuesMap = fieldMapBuilder.build();
@@ -177,12 +201,39 @@ public class DataSourceName implements ResourceName {
 
   @Override
   public String toString() {
-    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
+    return !Objects.isNull(fixedValue) ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      DataSourceName that = ((DataSourceName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.dataSource, that.dataSource)
+          && Objects.equals(this.location, that.location);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(dataSource);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    return h;
   }
 
   /** Builder for projects/{project}/dataSources/{data_source}. */
   public static class Builder {
-
     private String project;
     private String dataSource;
 
@@ -208,9 +259,8 @@ public class DataSourceName implements ResourceName {
 
     private Builder(DataSourceName dataSourceName) {
       Preconditions.checkArgument(
-          dataSourceName.pathTemplate == PROJECT_DATA_SOURCE_PATH_TEMPLATE,
-          "toBuilder is only supported when DataSourceName has the pattern of "
-              + "projects/{project}/dataSources/{data_source}.");
+          Objects.equals(dataSourceName.pathTemplate, PROJECT_DATA_SOURCE),
+          "toBuilder is only supported when DataSourceName has the pattern of projects/{project}/dataSources/{data_source}");
       project = dataSourceName.project;
       dataSource = dataSourceName.dataSource;
     }
@@ -223,12 +273,11 @@ public class DataSourceName implements ResourceName {
   /** Builder for projects/{project}/locations/{location}/dataSources/{data_source}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationDataSourceBuilder {
-
     private String project;
     private String location;
     private String dataSource;
 
-    private ProjectLocationDataSourceBuilder() {}
+    protected ProjectLocationDataSourceBuilder() {}
 
     public String getProject() {
       return project;
@@ -260,33 +309,5 @@ public class DataSourceName implements ResourceName {
     public DataSourceName build() {
       return new DataSourceName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      DataSourceName that = (DataSourceName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.dataSource, that.dataSource))
-          && (Objects.equals(this.location, that.location));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(dataSource);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    return h;
   }
 }

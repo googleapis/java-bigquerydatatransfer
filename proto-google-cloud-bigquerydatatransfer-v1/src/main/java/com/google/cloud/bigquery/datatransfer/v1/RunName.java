@@ -187,7 +187,7 @@ public class RunName implements ResourceName {
   public static List<String> toStringList(List<RunName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (RunName value : values) {
-      if (Objects.isNull(value)) {
+      if (value == null) {
         list.add("");
       } else {
         list.add(value.toString());
@@ -203,20 +203,20 @@ public class RunName implements ResourceName {
 
   @Override
   public Map<String, String> getFieldValuesMap() {
-    if (Objects.isNull(fieldValuesMap)) {
+    if (fieldValuesMap == null) {
       synchronized (this) {
-        if (Objects.isNull(fieldValuesMap)) {
+        if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (!Objects.isNull(project)) {
+          if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (!Objects.isNull(transferConfig)) {
+          if (transferConfig != null) {
             fieldMapBuilder.put("transfer_config", transferConfig);
           }
-          if (!Objects.isNull(run)) {
+          if (run != null) {
             fieldMapBuilder.put("run", run);
           }
-          if (!Objects.isNull(location)) {
+          if (location != null) {
             fieldMapBuilder.put("location", location);
           }
           fieldValuesMap = fieldMapBuilder.build();
@@ -232,7 +232,7 @@ public class RunName implements ResourceName {
 
   @Override
   public String toString() {
-    return !Objects.isNull(fixedValue) ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override

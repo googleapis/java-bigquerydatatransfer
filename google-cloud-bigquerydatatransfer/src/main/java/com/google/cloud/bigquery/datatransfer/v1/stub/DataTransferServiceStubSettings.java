@@ -75,7 +75,6 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -182,7 +181,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
             @Override
             public Iterable<DataSource> extractResources(ListDataSourcesResponse payload) {
-              return Objects.isNull(payload.getDataSourcesList())
+              return payload.getDataSourcesList() == null
                   ? ImmutableList.<DataSource>of()
                   : payload.getDataSourcesList();
             }
@@ -222,7 +221,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
             @Override
             public Iterable<TransferConfig> extractResources(ListTransferConfigsResponse payload) {
-              return Objects.isNull(payload.getTransferConfigsList())
+              return payload.getTransferConfigsList() == null
                   ? ImmutableList.<TransferConfig>of()
                   : payload.getTransferConfigsList();
             }
@@ -262,7 +261,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
             @Override
             public Iterable<TransferRun> extractResources(ListTransferRunsResponse payload) {
-              return Objects.isNull(payload.getTransferRunsList())
+              return payload.getTransferRunsList() == null
                   ? ImmutableList.<TransferRun>of()
                   : payload.getTransferRunsList();
             }
@@ -302,7 +301,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
             @Override
             public Iterable<TransferMessage> extractResources(ListTransferLogsResponse payload) {
-              return Objects.isNull(payload.getTransferMessagesList())
+              return payload.getTransferMessagesList() == null
                   ? ImmutableList.<TransferMessage>of()
                   : payload.getTransferMessagesList();
             }

@@ -94,17 +94,17 @@ public class DataTransferServiceClientTest {
         DataSource.newBuilder()
             .setName(
                 DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString())
-            .setDataSourceId("data_source_id-1015796374")
-            .setDisplayName("display_name1615086568")
+            .setDataSourceId("dataSourceId-1221402528")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .setClientId("client_id-1904089585")
+            .setClientId("clientId908408390")
             .addAllScopes(new ArrayList<String>())
             .setSupportsMultipleTransfers(true)
             .setUpdateDeadlineSeconds(991471694)
-            .setDefaultSchedule("default_schedule-800168235")
+            .setDefaultSchedule("defaultSchedule1300167672")
             .setSupportsCustomSchedule(true)
             .addAllParameters(new ArrayList<DataSourceParameter>())
-            .setHelpUrl("help_url-789431439")
+            .setHelpUrl("helpUrl805808750")
             .setDefaultDataRefreshWindowDays(-1804935157)
             .setManualRunsDisabled(true)
             .setMinimumScheduleInterval(Duration.newBuilder().build())
@@ -147,17 +147,17 @@ public class DataTransferServiceClientTest {
         DataSource.newBuilder()
             .setName(
                 DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString())
-            .setDataSourceId("data_source_id-1015796374")
-            .setDisplayName("display_name1615086568")
+            .setDataSourceId("dataSourceId-1221402528")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .setClientId("client_id-1904089585")
+            .setClientId("clientId908408390")
             .addAllScopes(new ArrayList<String>())
             .setSupportsMultipleTransfers(true)
             .setUpdateDeadlineSeconds(991471694)
-            .setDefaultSchedule("default_schedule-800168235")
+            .setDefaultSchedule("defaultSchedule1300167672")
             .setSupportsCustomSchedule(true)
             .addAllParameters(new ArrayList<DataSourceParameter>())
-            .setHelpUrl("help_url-789431439")
+            .setHelpUrl("helpUrl805808750")
             .setDefaultDataRefreshWindowDays(-1804935157)
             .setManualRunsDisabled(true)
             .setMinimumScheduleInterval(Duration.newBuilder().build())
@@ -333,8 +333,8 @@ public class DataTransferServiceClientTest {
             .setName(
                 TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setDataSourceId("data_source_id-1015796374")
+            .setDisplayName("displayName1714148973")
+            .setDataSourceId("dataSourceId-1221402528")
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
@@ -343,8 +343,8 @@ public class DataTransferServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNextRunTime(Timestamp.newBuilder().build())
             .setUserId(-147132913)
-            .setDatasetRegion("dataset_region959248539")
-            .setNotificationPubsubTopic("notification_pubsub_topic1794281191")
+            .setDatasetRegion("datasetRegion1032293772")
+            .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
@@ -390,8 +390,8 @@ public class DataTransferServiceClientTest {
             .setName(
                 TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setDataSourceId("data_source_id-1015796374")
+            .setDisplayName("displayName1714148973")
+            .setDataSourceId("dataSourceId-1221402528")
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
@@ -400,8 +400,8 @@ public class DataTransferServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNextRunTime(Timestamp.newBuilder().build())
             .setUserId(-147132913)
-            .setDatasetRegion("dataset_region959248539")
-            .setNotificationPubsubTopic("notification_pubsub_topic1794281191")
+            .setDatasetRegion("datasetRegion1032293772")
+            .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
@@ -447,8 +447,8 @@ public class DataTransferServiceClientTest {
             .setName(
                 TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setDataSourceId("data_source_id-1015796374")
+            .setDisplayName("displayName1714148973")
+            .setDataSourceId("dataSourceId-1221402528")
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
@@ -457,8 +457,8 @@ public class DataTransferServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNextRunTime(Timestamp.newBuilder().build())
             .setUserId(-147132913)
-            .setDatasetRegion("dataset_region959248539")
-            .setNotificationPubsubTopic("notification_pubsub_topic1794281191")
+            .setDatasetRegion("datasetRegion1032293772")
+            .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
@@ -504,8 +504,8 @@ public class DataTransferServiceClientTest {
             .setName(
                 TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setDataSourceId("data_source_id-1015796374")
+            .setDisplayName("displayName1714148973")
+            .setDataSourceId("dataSourceId-1221402528")
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
@@ -514,8 +514,8 @@ public class DataTransferServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNextRunTime(Timestamp.newBuilder().build())
             .setUserId(-147132913)
-            .setDatasetRegion("dataset_region959248539")
-            .setNotificationPubsubTopic("notification_pubsub_topic1794281191")
+            .setDatasetRegion("datasetRegion1032293772")
+            .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
@@ -633,8 +633,8 @@ public class DataTransferServiceClientTest {
             .setName(
                 TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setDataSourceId("data_source_id-1015796374")
+            .setDisplayName("displayName1714148973")
+            .setDataSourceId("dataSourceId-1221402528")
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
@@ -643,8 +643,8 @@ public class DataTransferServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNextRunTime(Timestamp.newBuilder().build())
             .setUserId(-147132913)
-            .setDatasetRegion("dataset_region959248539")
-            .setNotificationPubsubTopic("notification_pubsub_topic1794281191")
+            .setDatasetRegion("datasetRegion1032293772")
+            .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
@@ -688,8 +688,8 @@ public class DataTransferServiceClientTest {
             .setName(
                 TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setDataSourceId("data_source_id-1015796374")
+            .setDisplayName("displayName1714148973")
+            .setDataSourceId("dataSourceId-1221402528")
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
@@ -698,8 +698,8 @@ public class DataTransferServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setNextRunTime(Timestamp.newBuilder().build())
             .setUserId(-147132913)
-            .setDatasetRegion("dataset_region959248539")
-            .setNotificationPubsubTopic("notification_pubsub_topic1794281191")
+            .setDatasetRegion("datasetRegion1032293772")
+            .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
@@ -1021,10 +1021,10 @@ public class DataTransferServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParams(Struct.newBuilder().build())
-            .setDataSourceId("data_source_id-1015796374")
+            .setDataSourceId("dataSourceId-1221402528")
             .setUserId(-147132913)
             .setSchedule("schedule-697920873")
-            .setNotificationPubsubTopic("notification_pubsub_topic1794281191")
+            .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
@@ -1075,10 +1075,10 @@ public class DataTransferServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParams(Struct.newBuilder().build())
-            .setDataSourceId("data_source_id-1015796374")
+            .setDataSourceId("dataSourceId-1221402528")
             .setUserId(-147132913)
             .setSchedule("schedule-697920873")
-            .setNotificationPubsubTopic("notification_pubsub_topic1794281191")
+            .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);

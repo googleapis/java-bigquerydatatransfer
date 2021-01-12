@@ -285,7 +285,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     created. Must be in the format projects/{project_id}/locations/{location_id} or
    *     projects/{project_id}. If specified location and location of the destination bigquery
    *     dataset do not match - the request will fail.
-   * @param transfer_config Required. Data transfer configuration to create.
+   * @param transferConfig Required. Data transfer configuration to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig createTransferConfig(
@@ -306,7 +306,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     created. Must be in the format projects/{project_id}/locations/{location_id} or
    *     projects/{project_id}. If specified location and location of the destination bigquery
    *     dataset do not match - the request will fail.
-   * @param transfer_config Required. Data transfer configuration to create.
+   * @param transferConfig Required. Data transfer configuration to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig createTransferConfig(
@@ -327,7 +327,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *     created. Must be in the format projects/{project_id}/locations/{location_id} or
    *     projects/{project_id}. If specified location and location of the destination bigquery
    *     dataset do not match - the request will fail.
-   * @param transfer_config Required. Data transfer configuration to create.
+   * @param transferConfig Required. Data transfer configuration to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig createTransferConfig(String parent, TransferConfig transferConfig) {
@@ -365,8 +365,8 @@ public class DataTransferServiceClient implements BackgroundResource {
   /**
    * Updates a data transfer configuration. All fields must be set, even if they are not updated.
    *
-   * @param transfer_config Required. Data transfer configuration to create.
-   * @param update_mask Required. Required list of fields to be updated in this request.
+   * @param transferConfig Required. Data transfer configuration to create.
+   * @param updateMask Required. Required list of fields to be updated in this request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig updateTransferConfig(
@@ -596,9 +596,9 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @param parent Required. Transfer configuration name in the form:
    *     `projects/{project_id}/transferConfigs/{config_id}` or
    *     `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
-   * @param start_time Required. Start time of the range of transfer runs. For example,
+   * @param startTime Required. Start time of the range of transfer runs. For example,
    *     `"2017-05-25T00:00:00+00:00"`.
-   * @param end_time Required. End time of the range of transfer runs. For example,
+   * @param endTime Required. End time of the range of transfer runs. For example,
    *     `"2017-05-30T00:00:00+00:00"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -623,9 +623,9 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @param parent Required. Transfer configuration name in the form:
    *     `projects/{project_id}/transferConfigs/{config_id}` or
    *     `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
-   * @param start_time Required. Start time of the range of transfer runs. For example,
+   * @param startTime Required. Start time of the range of transfer runs. For example,
    *     `"2017-05-25T00:00:00+00:00"`.
-   * @param end_time Required. End time of the range of transfer runs. For example,
+   * @param endTime Required. End time of the range of transfer runs. For example,
    *     `"2017-05-30T00:00:00+00:00"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

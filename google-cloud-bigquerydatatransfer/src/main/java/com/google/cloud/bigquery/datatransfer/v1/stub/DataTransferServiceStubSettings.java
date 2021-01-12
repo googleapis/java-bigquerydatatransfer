@@ -112,7 +112,6 @@ import org.threeten.bp.Duration;
  *     dataTransferServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class DataTransferServiceStubSettings extends StubSettings<DataTransferServiceStubSettings> {
   /** The default scopes of the service. */

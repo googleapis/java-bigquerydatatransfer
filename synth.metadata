@@ -11,15 +11,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquerydatatransfer.git",
-        "sha": "9dbe58b9bd5ba3b3a1b592a695a17bb7fef17d68"
+        "sha": "154e6a5cf52805f6c72d467ad49444d426dd1813"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b11a87f3b54be3a5e42c15020ee1e0781f86da90",
-        "internalRef": "344134135"
+        "sha": "f92985350deb8d9f14a20f915728d5fd7edaa765",
+        "internalRef": "344831546"
       }
     },
     {
@@ -112,7 +112,6 @@
     "google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/stub/GrpcDataTransferServiceCallableFactory.java",
     "google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/stub/GrpcDataTransferServiceStub.java",
     "google-cloud-bigquerydatatransfer/src/test/java/com/google/cloud/bigquery/datatransfer/v1/DataTransferServiceClientTest.java",
-    "google-cloud-bigquerydatatransfer/src/test/java/com/google/cloud/bigquery/datatransfer/v1/DataTransferServiceSmokeTest.java",
     "google-cloud-bigquerydatatransfer/src/test/java/com/google/cloud/bigquery/datatransfer/v1/MockDataTransferService.java",
     "google-cloud-bigquerydatatransfer/src/test/java/com/google/cloud/bigquery/datatransfer/v1/MockDataTransferServiceImpl.java",
     "grpc-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataTransferServiceGrpc.java",

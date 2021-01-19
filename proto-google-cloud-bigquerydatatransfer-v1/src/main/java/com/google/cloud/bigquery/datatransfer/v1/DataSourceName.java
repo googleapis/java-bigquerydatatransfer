@@ -148,25 +148,7 @@ public class DataSourceName implements ResourceName {
     throw new ValidationException("DataSourceName.parse: formattedString not in valid format");
   }
 
-  public static List<DataSourceName> parseList(List<String> formattedStrings) {
-    List<DataSourceName> list = new ArrayList<>(formattedStrings.size());
-    for (String formattedString : formattedStrings) {
-      list.add(parse(formattedString));
-    }
-    return list;
-  }
 
-  public static List<String> toStringList(List<DataSourceName> values) {
-    List<String> list = new ArrayList<>(values.size());
-    for (DataSourceName value : values) {
-      if (value == null) {
-        list.add("");
-      } else {
-        list.add(value.toString());
-      }
-    }
-    return list;
-  }
 
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_DATA_SOURCE.matches(formattedString)

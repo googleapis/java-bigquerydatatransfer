@@ -149,25 +149,7 @@ public class TransferConfigName implements ResourceName {
     throw new ValidationException("TransferConfigName.parse: formattedString not in valid format");
   }
 
-  public static List<TransferConfigName> parseList(List<String> formattedStrings) {
-    List<TransferConfigName> list = new ArrayList<>(formattedStrings.size());
-    for (String formattedString : formattedStrings) {
-      list.add(parse(formattedString));
-    }
-    return list;
-  }
 
-  public static List<String> toStringList(List<TransferConfigName> values) {
-    List<String> list = new ArrayList<>(values.size());
-    for (TransferConfigName value : values) {
-      if (value == null) {
-        list.add("");
-      } else {
-        list.add(value.toString());
-      }
-    }
-    return list;
-  }
 
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_TRANSFER_CONFIG.matches(formattedString)

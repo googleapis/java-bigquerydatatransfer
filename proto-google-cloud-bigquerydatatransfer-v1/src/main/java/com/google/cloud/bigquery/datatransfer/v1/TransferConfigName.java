@@ -22,6 +22,8 @@ import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
@@ -146,6 +148,8 @@ public class TransferConfigName implements ResourceName {
     }
     throw new ValidationException("TransferConfigName.parse: formattedString not in valid format");
   }
+
+
 
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_TRANSFER_CONFIG.matches(formattedString)

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.3.12...v1.4.0) (2021-08-05)
+
+
+### Features
+
+* configure initial sp version ([#953](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/953)) ([c4576de](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/c4576de61ab207537442975699695427a48c8af1))
+
 ### [1.3.12](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.3.11...v1.3.12) (2021-07-22)
 
 

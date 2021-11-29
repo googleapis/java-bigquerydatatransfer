@@ -57,8 +57,7 @@ public final class TransferProto {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + "4google/cloud/bigquery/datatransfer/v1/transfer.proto\022%google.cloud.bigquery.da"
-          + "tatransfer.v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032\036google/protobuf/duration.proto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"0\n"
+          + "4google/cloud/bigquery/datatransfer/v1/transfer.proto\022%google.cloud.bigquery.datatransfer.v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032\036google/protobuf/duration.proto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"0\n"
           + "\020EmailPreferences\022\034\n"
           + "\024enable_failure_email\030\001 \001(\010\"\220\001\n"
           + "\017ScheduleOptions\022\037\n"

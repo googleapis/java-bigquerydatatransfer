@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.16](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.3.15...v2.3.16) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([2cf31ab](https://github.com/googleapis/java-bigquerydatatransfer/commit/2cf31abf50b2e4e6670a6fc0e8d8d97c6d047764))
+
 ## [2.3.15](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.3.14...v2.3.15) (2022-10-03)
 
 
